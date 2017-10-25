@@ -52,9 +52,9 @@ while True:
 	nextstep = input("Do u wanna find median number?(1/2): ")
 	if nextstep == 1:
 		median(arr)
-		choice = (input('Do u wanna? 1/n\2'))
+		choice = (input('Do u want to repeat this programm? 1/2\n'))
 	else:
-		choice = (input('Do u want to repeat this programe? 1/2\n'))
+		choice = (input('Do u want to repeat this programm? 1/2\n'))
 	if choice == 1:
 		continue
 	elif choice == 2:
