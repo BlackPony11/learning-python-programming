@@ -1,3 +1,4 @@
+import gc as gc
 arr = []
 size = 10
 s=[]
@@ -21,7 +22,7 @@ while True:
 	inp = input()
 	if inp == 1:
 		 for i in range(size):
-			  arr.append(int(input()))
+			  arr.append(int(input("Pleas input values")))
 	elif inp == 2:
 		ifile=input("Please, input the file name(with extention and ''): ")
 		with open(ifile) as f:
@@ -55,6 +56,8 @@ while True:
 	else:
 		choice = (input('Do u want to repeat this programm? 1/2\n'))
 	if choice == 1:
+		arr[:] = []
+		s[:] = []
 		continue
 	elif choice == 2:
 		break
