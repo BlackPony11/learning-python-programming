@@ -1,4 +1,3 @@
-import gc as gc
 arr = []
 size = 10
 s=[]
