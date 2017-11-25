@@ -1,6 +1,26 @@
+#!usr/bin/python2
 arr = []
 size = 10
 s=[]
+
+def idiotCheck():
+    	try:
+			arr.append(int(input("Pleas input values\n")));
+		except:
+			for i in range(1):
+    			print("Error. Input only intiger values, and press ENTER to continue\n")
+				idiotCheck()
+
+def fileInputForIdiot():
+    	try:
+				ifile=input("Please, input the file name(with extention and ''):\n")
+			with open(ifile) as f:
+				arr = f.read().splitlines()
+				arr = (list(map(int,arr)))
+		except:
+			for i in range(1):
+    			print("Error. Input only intiger values, and press ENTER to continue\n")
+				fileInputForIdiot()
 def buble(bad_list):
 	length = len(bad_list)-1
 	sorteda = False
@@ -16,17 +36,20 @@ def median(array):
 		print ((arr[half-1]+arr[half])/2)
 	else:
 		print (arr[half])
+def hello():
+    	print("What do you want, input values from keybord or from file?(1/2): ")
 while True:
-	print("What do you want, input values from keybord or from file?(1/2): ")
-	inp = input()
+	try:
+		inp = int(input())
+	except ValueError:
+		print("Err")
+		hello()
+		inp = int(input())
 	if inp == 1:
 		 for i in range(size):
-			  arr.append(int(input("Pleas input values")))
+			  idiotCheck()
 	elif inp == 2:
-		ifile=input("Please, input the file name(with extention and ''): ")
-		with open(ifile) as f:
-			arr = f.read().splitlines()
-			arr = (list(map(int,arr)))
+		fileInputForIdiot()
 	else:
 		pass
 	print (arr)
